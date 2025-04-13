@@ -1,6 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/poems/(.*)", "destination": "/poems/$1" }
-    ]
-  }
-  
