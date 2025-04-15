@@ -12,6 +12,21 @@
     <h1>Poetry Collection</h1>
     <div class="poems-grid">
 
+      <a href="/poems/When I Came to See You.html" class="poem-card">
+        <img src="images/when i came to see.png" alt="Hope rising" />
+        <div class="poem-card-content">
+          <h2 class="poem-title">When I Came to See You</h2>
+          <p class="poem-description">A scene from anime</p>
+        </div>
+      </a>
+
+      <a href="/poems/too soon too late.html" class="poem-card">
+        <img src="images/too soon.png" alt="Hope rising" />
+        <div class="poem-card-content">
+          <h2 class="poem-title">Too soon Too late</h2>
+          <p class="poem-description">A time to act</p>
+        </div>
+
       <a href="/poems/goodbye.html" class="poem-card">
         <img src="images/goodbye.png" alt="Birds on a branch" />
         <div class="poem-card-content">
@@ -20,11 +35,19 @@
         </div>
       </a>
 
-      <a href="/poems/healing.html" class="poem-card">
-        <img src="images/Healing.jpeg" alt="Ocean waves" />
+      <a href="/poems/illusion.html" class="poem-card">
+        <img src="images/ILLUSION.jpeg" alt="Dreamy clouds" />
         <div class="poem-card-content">
-          <h2 class="poem-title">Healing</h2>
-          <p class="poem-description">Finding peace in the journey of recovery</p>
+          <h2 class="poem-title">Illusion</h2>
+          <p class="poem-description">Dreams and fantasies of the mind</p>
+        </div>
+      </a>
+
+      <a href="/poems/jealousy.html" class="poem-card">
+        <img src="images/JEALOUSY.png" alt="Fire and envy" />
+        <div class="poem-card-content">
+          <h2 class="poem-title">Jealousy</h2>
+          <p class="poem-description">The burning flames of desire</p>
         </div>
       </a>
 
@@ -44,30 +67,6 @@
         </div>
       </a>
 
-      <a href="/poems/death.html" class="poem-card">
-        <img src="images/DEAD.png" alt="Moonlit night" />
-        <div class="poem-card-content">
-          <h2 class="poem-title">Death</h2>
-          <p class="poem-description">Contemplating the final journey</p>
-        </div>
-      </a>
-
-      <a href="/poems/jealousy.html" class="poem-card">
-        <img src="images/JEALOUSY.png" alt="Fire and envy" />
-        <div class="poem-card-content">
-          <h2 class="poem-title">Jealousy</h2>
-          <p class="poem-description">The burning flames of desire</p>
-        </div>
-      </a>
-
-      <a href="/poems/illusion.html" class="poem-card">
-        <img src="images/ILLUSION.jpeg" alt="Dreamy clouds" />
-        <div class="poem-card-content">
-          <h2 class="poem-title">Illusion</h2>
-          <p class="poem-description">Dreams and fantasies of the mind</p>
-        </div>
-      </a>
-
       <a href="/poems/emotion.html" class="poem-card">
         <img src="images/Emotion.png" alt="Emotional sky" />
         <div class="poem-card-content">
@@ -83,41 +82,25 @@
           <p class="poem-description">Light after the longest night</p>
         </div>
       </a>
-      
-      <a href="/poems/too soon too late.html" class="poem-card">
-        <img src="images/too soon.png" alt="Hope rising" />
+
+      <a href="/poems/healing.html" class="poem-card">
+        <img src="images/Healing.jpeg" alt="Ocean waves" />
         <div class="poem-card-content">
-          <h2 class="poem-title">Too soon Too late</h2>
-          <p class="poem-description">A time to act</p>
+          <h2 class="poem-title">Healing</h2>
+          <p class="poem-description">Finding peace in the journey of recovery</p>
         </div>
       </a>
-
-      <a href="/poems/When I Came to See You.html" class="poem-card">
-        <img src="images/when i came to see.png" alt="Hope rising" />
+      
+      </a>
+      <a href="/poems/death.html" class="poem-card">
+        <img src="images/DEAD.png" alt="Moonlit night" />
         <div class="poem-card-content">
-          <h2 class="poem-title">When I Came to See You</h2>
-          <p class="poem-description">A sene from anime</p>
+          <h2 class="poem-title">Death</h2>
+          <p class="poem-description">Contemplating the final journey</p>
         </div>
       </a>
 
     </div>
   </div>
-  <script>
-    const password = "reading"; // Change this to your desired password
-  
-    document.querySelectorAll('.poem-card').forEach(card => {
-      card.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent link from opening
-  
-        const userInput = prompt("🔐 Enter password to view this poem:");
-        if (userInput === password) {
-          window.location.href = this.href; // Open poem if password is correct
-        } else {
-          alert("❌ Incorrect password. Access denied.");
-        }
-      });
-    });
-  </script>
-  
 </body>
 </html>
