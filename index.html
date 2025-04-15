@@ -102,22 +102,7 @@
 
     </div>
   </div>
-  <script>
-    const password = "reading"; // Change this to your desired password
-  
-    document.querySelectorAll('.poem-card').forEach(card => {
-      card.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent link from opening
-  
-        const userInput = prompt("🔐 Enter password to view this poem:");
-        if (userInput === password) {
-          window.location.href = this.href; // Open poem if password is correct
-        } else {
-          alert("❌ Incorrect password. Access denied.");
-        }
-      });
-    });
-  </script>
+
   
 </body>
 </html>
