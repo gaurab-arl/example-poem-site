@@ -33,7 +33,7 @@ h1 {
 
 .poems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 2rem;
     padding: 1rem;
 }
@@ -78,9 +78,6 @@ h1 {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 .poem-content {
@@ -145,5 +142,33 @@ h1 {
     font-size: 1.1rem;
 }
 
+/* used for the sizing in moble */
 
-  
+body, .container, .poem-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.container {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .poem-content {
+        font-size: 1rem;
+        padding: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .poem-title {
+        font-size: 1.2rem;
+    }
+
+    .poem-description {
+        font-size: 0.9rem;
+    }
+}
+
