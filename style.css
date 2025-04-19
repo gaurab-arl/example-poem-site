@@ -78,6 +78,9 @@ h1 {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .poem-content {
