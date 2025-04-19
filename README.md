@@ -1,31 +1,35 @@
 🚀 Deploying a Static Website (HTML/CSS/JS) to GitHub Pages
-Step 1: Prepare Your Files
-Put your website files in a folder. For example:
+🧩 Step 1: Prepare Your Files
+Put your website files (HTML, CSS, JS) in a single folder, like this:
 
 bash
 Copy
 Edit
 /my-website
-  ├── index.html
-  ├── style.css
-  └── script.js
-Step 2: Create a GitHub Repository
-Go to https://github.com.
+├── index.html
+├── style.css
+└── script.js
+🌐 Step 2: Create a GitHub Repository
+Go to https://github.com
 
-Click New repository.
-Give it a name (e.g., my-website) and click Create repository.
+Click “New repository”
 
-Step 3: Upload or Push Your Code
-You can upload manually or use Git:
-Option A: Manual Upload
-Click “Add file” > “Upload files”.
+Name it (e.g., my-website) and click Create repository
 
-Upload your HTML/CSS/JS files and commit them.
+📤 Step 3: Upload or Push Your Code
+Option A: Manual Upload (Easy Way)
 
------------------------------------------------------------------------------------------------------------------------
+Go to your GitHub repo
 
-Option B: Using Git
+Click “Add file” → “Upload files”
 
+Upload your website files and commit
+
+Option B: Using Git (Command Line)
+
+bash
+Copy
+Edit
 cd path/to/my-website
 git init
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
@@ -33,17 +37,23 @@ git add .
 git commit -m "Initial commit"
 git branch -M main
 git push -u origin main
-Step 4: Enable GitHub Pages
-Go to your repository on GitHub.
+🚀 Step 4: Enable GitHub Pages
+Go to Settings tab of your GitHub repo
 
-Click on Settings > Pages (on the sidebar).
+Click Pages in the sidebar (scroll down)
 
-Under “Source”, select:
+Under “Source”, choose:
+
 Branch: main
-Folder: /root (or /docs if that's where your files are)
-Click Save.
 
-✅ Done!
-Your site will be live at:
-📡 https://your-username.github.io/your-repo-name
+Folder: /root
 
+Click Save
+
+✅ You're Done!
+Your website will be live at:
+
+arduino
+Copy
+Edit
+https://your-username.github.io/your-repo-name
