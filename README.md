@@ -1,10 +1,7 @@
 🚀 Deploying a Static Website (HTML/CSS/JS) to GitHub Pages
 Step 1: Prepare Your Files
-Put your website files in a folder. For example:
+Put your website files in a folder.
 
-bash
-Copy
-Edit
 /my-website
   ├── index.html
   ├── style.css
