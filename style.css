@@ -3,7 +3,8 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family: 'Georgia', serif;
-    background-image: url('/images/background.png');
+    /* this section */
+    background-image: url('/images/img4.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,9 +12,7 @@ body {
 }
 
 .container {
-  
-   
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 15px;
     box-sizing: border-box; 
