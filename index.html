@@ -6,39 +6,60 @@
   <title>Poetry Collection</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-
-</script>
-
 <body>
+  <nav class="navbar">
+    <a href="/" class="home-button">Home</a>
+  </nav>
 
   <div class="container">
-    <h1>Poetry Collection</h1>
-   <div class="category-dropdown">
-  <label for="categoryFilter">Search:</label>
-  <select id="categoryFilter" onchange="filterPoems(this.value)">
-    <option value="all">All</option>
-    <option value="phase">Phase</option>
-    <option value="grief">Grief</option>
-    <option value="me">Me</option>
-    <option value="cheerfull">Cherful Girl</option>
-    <option value="someone">Someone</option>
-    <option value="mask">Normal Girl</option>
-    <option value="friend">friend</option>
-      <option value="jounery">Jounery</option> 
-        <option value="unique">Unique</option> 
-  </select>
-</div>
+    <div class="header-section">
+      <h1>Poetry Collection</h1>
+      <p class="subtitle">A journey through words and emotions</p>
+    </div>
+
+    <div class="search-section">
+      <div class="category-dropdown">
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter" onchange="filterPoems(this.value)">
+          <option value="all">All Categories</option>
+          <option value="phase">Life Phases</option>
+          <option value="grief">Healing & Grief</option>
+        
+        </select>
+      </div>
+    </div>
 
     <div class="poems-grid">
 
-      <a href="/poems/who.html" class="poem-card" data-category="Jounery">
-        <img src="images/test.jpg" alt="Birds" />
+
+      <a href="/poems/who.html" class="poem-card" data-category="journey">
+        <div class="poem-card-image">
+          <img src="" alt="Reflective water surface with ripples" />
+        </div>
         <div class="poem-card-content">
-           <h2 class="poem-title">Who are you ?</h2>  
-          <p class="poem-description"> </p>
-        </div> 
+          <h2 class="poem-title">Who are you?</h2>
+          <p class="poem-description">A reflection on identity and self-discovery</p>
+          <span class="read-more">Read More →</span>
+        </div>
       </a>
+    </div>
+
+     <a href="/poems/who.html" class="poem-card" data-category="journey">
+        <div class="poem-card-image">
+          <img src="" alt="Reflective water surface with ripples" />
+        </div>
+        <div class="poem-card-content">
+          <h2 class="poem-title">Who are you?</h2>
+          <p class="poem-description">A reflection on identity and self-discovery</p>
+          <span class="read-more">Read More →</span>
+        </div>
+      </a>
+    </div>
+
+    
+
+
+
 
   </div>
 </body>
