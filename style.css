@@ -156,6 +156,69 @@ h1 {
     text-decoration: underline;
 }
 
+.poem-page-header {
+    max-width: 800px;
+    margin: 2rem auto 1.5rem auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.poem-page-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.poem-page-description {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+.poem-content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    padding: 0 1.5rem;
+    color: #3b2e5a;
+}
+
+.author {
+    text-align: right;
+    margin: 2rem 1.5rem;
+    font-style: italic;
+    color: #8b6cb3;
+    font-size: 1rem;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 1.5rem 2rem;
+    padding: 0.5rem 1.3rem;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    box-shadow: 0 4px 18px var(--shadow-color);
+    text-decoration: none;
+    
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -169,5 +232,17 @@ h1 {
 
     .poem-card-image {
         height: 120px;
+    }
+
+    .poem-page-header {
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    .poem-content {
+        padding: 0 1rem;
+    }
+
+    .author {
+        margin: 2rem 1rem;
     }
 }
