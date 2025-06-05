@@ -34,11 +34,6 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family: 'Georgia', serif;
-    background-image: url('/images/background.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #2c3e50;
     background: linear-gradient(135deg, #f6f8fd 0%, #f1f1f1 100%);
     color: var(--text-color);
     word-wrap: break-word;
@@ -156,6 +151,7 @@ h1 {
     color: inherit;
     position: relative;
     animation: fadeIn 0.6s ease;
+    display: block;
 }
 
 .poem-card:hover {
@@ -167,7 +163,7 @@ h1 {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -249,11 +245,13 @@ h1 {
 
 .poem-page-image {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    max-width: 800px;
+    height: auto;
+    object-fit: contain;
     border-radius: 12px;
-    margin: 2rem 0;
+    margin: 2rem auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .author {
@@ -286,44 +284,6 @@ h1 {
     overflow-wrap: break-word;
 }
 
-/* Modal Styles */
-.poem-modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background-color: var(--card-bg);
-    padding: var(--space-6);
-    border-radius: var(--radius-md);
-    max-width: 800px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.close-modal {
-    position: absolute;
-    top: var(--space-4);
-    right: var(--space-4);
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-secondary);
-    transition: color var(--transition-fast);
-}
-
-.close-modal:hover {
-    color: var(--error);
-}
-
-/* Footer */
 footer {
     background-color: var(--bg-secondary);
     padding: var(--space-6) 0;
@@ -385,6 +345,9 @@ footer p {
     h1 { font-size: 2.5rem; }
     .poems-grid { grid-template-columns: 1fr; }
     .poems-wrapper { padding: 1rem; }
+    .poem-page-image {
+        height: 300px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -403,5 +366,9 @@ footer p {
 
     .poem-description {
         font-size: 0.9rem;
+    }
+    
+    .poem-page-image {
+        height: 200px;
     }
 }
