@@ -34,59 +34,58 @@
 
   <div class="poems-wrapper">
     <div class="poems-grid">
-
-       <a href="/poems/mary.html" class="poem-card" data-category="someone"> 
+      <a href="/poems/mary.html" class="poem-card" data-category="someone"> 
         <img src="images/test.jpg" alt="Birds" />
         <div class="poem-card-content">
-           <h2 class="poem-title">Mary</h2>
+          <h2 class="poem-title">Mary</h2>
           <p class="poem-description">A story of a girl named Mary</p>
         </div> 
-      </a> 
-      <a href="#" class="poem-card" data-category="nature">
-  <img src="images/test.jpg" alt="Mountain landscape">
-  <span class="poem-category">Nature</span>
-  <div class="poem-card-content">
-    <h2 class="poem-title">Dunga</h2>
-    <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-  </div>
-</a>
+      </a>
 
-      <div class="poem-card" data-category="love">
+      <a href="/poems/dunga.html" class="poem-card" data-category="nature">
+        <img src="images/test.jpg" alt="Mountain landscape">
+        <span class="poem-category">Nature</span>
+        <div class="poem-card-content">
+          <h2 class="poem-title">Dunga</h2>
+          <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
+        </div>
+      </a>
+
+      <a href="/poems/majasto.html" class="poem-card" data-category="love">
         <span class="poem-category">Love</span>
         <img src="images/test.jpg" alt="Sunset silhouette">
         <div class="poem-card-content">
           <h2 class="poem-title">Ma Jasto</h2>
           <p class="poem-description">A reflection on being different in a world of sameness, celebrating the uniqueness that makes us who we are.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="poem-card" data-category="life">
+      <a href="/poems/divine.html" class="poem-card" data-category="life">
         <span class="poem-category">Life</span>
         <img src="images/test.jpg" alt="Path through forest">
         <div class="poem-card-content">
           <h2 class="poem-title">Divine</h2>
           <p class="poem-description">Finding the sacred in everyday moments, discovering the extraordinary within the ordinary.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="poem-card" data-category="nature">
+      <a href="/poems/seasons.html" class="poem-card" data-category="nature">
         <span class="poem-category">Nature</span>
         <img src="images/test.jpg" alt="Autumn leaves">
         <div class="poem-card-content">
           <h2 class="poem-title">Seasons</h2>
           <p class="poem-description">A journey through the changing seasons of life, each bringing its own lessons and beauty.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="poem-card" data-category="love">
+      <a href="/poems/eternal.html" class="poem-card" data-category="love">
         <span class="poem-category">Love</span>
         <img src="images/test.jpg" alt="Heart in sand">
         <div class="poem-card-content">
           <h2 class="poem-title">Eternal</h2>
           <p class="poem-description">An exploration of timeless love that transcends the boundaries of space and time.</p>
         </div>
-        
-      </div>
+      </a>
     </div>
   </div>
 
@@ -101,5 +100,18 @@
       <p>&copy; 2025 Gaurab. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function filterPoems(category) {
+      const poems = document.querySelectorAll('.poem-card');
+      poems.forEach(poem => {
+        if (category === 'all' || poem.dataset.category === category) {
+          poem.style.display = 'block';
+        } else {
+          poem.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
