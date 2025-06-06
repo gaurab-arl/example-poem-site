@@ -13,24 +13,23 @@
   <!-- Add preload for critical images -->
   <link rel="preload" href="images/poem-header.jpg" as="image">
 </head>
-
 <body>
   <header class="navbar">
-  <nav>
-    <a href="/" class="home-button">Home</a>
-  </nav>
+    <nav>
+      <a href="/" class="home-button">Home</a>
+    </nav>
   </header>
 
   <div class="poems-header">
     <h1>Poetry Collection</h1>
     <div class="underline"></div>
     <p class="poems-description">
-      <br> Journey through emotions, experiences, and moments captured in verses. 
+      Journey through emotions, experiences, and moments captured in verses. 
       Each poem tells a unique story, reflecting different aspects of life and love.
     </p>
 
     <div class="category-dropdown">
-      <select id="poem-category" onload="filterPoems('all')">
+      <select id="poem-category">
         <option value="all">All Poems</option>
         <option value="nature">Nature</option>
         <option value="love">Love</option>
@@ -40,62 +39,62 @@
   </div>
 
   <div class="poems-wrapper">
-  <div class="poems-grid">
-    <a href="/poems/sorry.html" class="poem-card" data-category="nature">
-      <span class="poem-category">Nature</span>
-      <img loading="lazy" src="images/asa.jpg" alt="Moonlit night">
-      <div class="poem-card-content">
-        <h2 class="poem-title">Sorry</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+    <div class="poems-grid">
+      <a href="/poems/first-love.html" class="poem-card" data-category="love">
+        <span class="poem-category">Love</span>
+        <img src="images/asa.jpg" alt="First Love" loading="lazy">
+        <div class="poem-card-content">
+          <h2 class="poem-title">First Love</h2>
+          <p class="poem-description">A tender memory etched in time, where hearts first learned to dance...</p>
+        </div>
+      </a>
 
-    <a href="/poems/sorry.html" class="poem-card" data-category="love">
-      <span class="poem-category">Love</span>
-      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
-      <div class="poem-card-content">
-        <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+      <a href="/poems/whispers.html" class="poem-card" data-category="nature">
+        <span class="poem-category">Nature</span>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Forest whispers">
+        <div class="poem-card-content">
+          <h2 class="poem-title">Forest Whispers</h2>
+          <p class="poem-description">The trees speak in ancient tongues, sharing secrets of the earth...</p>
+        </div>
+      </a>
 
-    <a href="/poems/sorry.html" class="poem-card" data-category="nature">
-      <span class="poem-category">Nature</span>
-      <img loading="lazy" src="images/pic2.png" alt="Moonlit night">
-      <div class="poem-card-content">
-        <h2 class="poem-title">Sorry</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+      <a href="/poems/sorry.html" class="poem-card" data-category="love">
+        <span class="poem-category">Love</span>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apology">
+        <div class="poem-card-content">
+          <h2 class="poem-title">Sorry</h2>
+          <p class="poem-description">Words left unspoken, hearts that need healing...</p>
+        </div>
+      </a>
 
-    <a href="/poems/sorry.html" class="poem-card" data-category="love">
-      <span class="poem-category">Love</span>
-      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
-      <div class="poem-card-content">
-        <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+      <a href="/poems/life-journey.html" class="poem-card" data-category="life">
+        <span class="poem-category">Life</span>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Life's journey">
+        <div class="poem-card-content">
+          <h2 class="poem-title">Life's Journey</h2>
+          <p class="poem-description">Every step a story, every breath a new beginning...</p>
+        </div>
+      </a>
 
-    <a href="/poems/sorry.html" class="poem-card" data-category="nature">
-      <span class="poem-category">Nature</span>
-      <img loading="lazy" src="images/pic2.png" alt="Moonlit night">
-      <div class="poem-card-content">
-        <h2 class="poem-title">Sorry</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+      <a href="/poems/moonlit-dreams.html" class="poem-card" data-category="nature">
+        <span class="poem-category">Nature</span>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Moonlit night">
+        <div class="poem-card-content">
+          <h2 class="poem-title">Moonlit Dreams</h2>
+          <p class="poem-description">Under silver light, dreams take flight across the starlit sky...</p>
+        </div>
+      </a>
 
-    <a href="/poems/sorry.html" class="poem-card" data-category="love">
-      <span class="poem-category">Love</span>
-      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
-      <div class="poem-card-content">
-        <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
-      </div>
-    </a>
+      <a href="/poems/eternal-love.html" class="poem-card" data-category="love">
+        <span class="poem-category">Love</span>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Eternal love">
+        <div class="poem-card-content">
+          <h2 class="poem-title">Eternal Love</h2>
+          <p class="poem-description">Beyond time and space, love finds its eternal place...</p>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
 
   <footer class="navbar">
     <div class="footer-content">
@@ -104,7 +103,6 @@
   </footer>
 
   <script>
-    // Defer JavaScript execution
     document.addEventListener('DOMContentLoaded', function() {
       function filterPoems(category) {
         const poems = document.querySelectorAll('.poem-card');
@@ -117,12 +115,14 @@
         });
       }
 
-      // Add event listener to select element
-      document.getElementById('poem-category').addEventListener('change', function() {
-        filterPoems(this.value);
-      });
+      const categorySelect = document.getElementById('poem-category');
+      if (categorySelect) {
+        categorySelect.addEventListener('change', function() {
+          filterPoems(this.value);
+        });
+      }
 
-      // Initial filter
+      // Initialize with all poems showing
       filterPoems('all');
     });
   </script>
