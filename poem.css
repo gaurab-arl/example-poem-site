@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #7e5bef;
+    --secondary-color: #f472b6;
+    --accent-color: #ffe4f2;
+    --text-color: #2f1e4c;
+    --background-color: #fdf9ff;
+    --card-background: #fff;
+    --shadow-color: rgba(126, 91, 239, 0.2);
+    --transition-speed: 0.4s;
+    --border-radius: 20px;
+    --font-family: 'Georgia', serif;
+    --font-heading: 'Playfair Display', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: var(--background-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 24px var(--shadow-color);
+}
+
+.back-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background: #6a4acc;
+    transform: translateY(-2px);
+}
+
+.poem-page-header {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.poem-page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.poem-page-description {
+    font-style: italic;
+    color: #666;
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+}
+
+.poem-content {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(126, 91, 239, 0.1);
+    margin: 2rem 0;
+}
+
+.author {
+    text-align: right;
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .poem-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .poem-content {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .poem-page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .poem-content {
+        padding: 1rem;
+    }
+}
