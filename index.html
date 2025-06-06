@@ -10,18 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <nav class="navbar">
+  <header class="navbar">
+  <nav >
     <a href="/" class="home-button">Home</a>
   </nav>
+  </header>
 
   <div class="poems-header">
+
     <h1>Poetry Collection</h1>
     <div class="underline"></div>
     <p class="poems-description">
-      <br> journey through emotions, experiences, and moments captured in verses. 
+      <br> Journey through emotions, experiences, and moments captured in verses. 
       Each poem tells a unique story, reflecting different aspects of life and love.
     </p>
+
     <div class="category-dropdown">
       <select id="poem-category" onchange="filterPoems(this.value)">
         <option value="all">All Poems</option>
@@ -46,16 +51,16 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/poem-header.png" alt="Hope rising">
+      <img src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">poem-a-story</p>
+        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
       </div>
     </a>
 
     <a href="/poems/sorry.html" class="poem-card" data-category="nature">
       <span class="poem-category">Nature</span>
-      <img src="images/poem-header.png" alt="Moonlit night">
+      <img src="images/pic2.png" alt="Moonlit night">
       <div class="poem-card-content">
         <h2 class="poem-title">Sorry</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -64,17 +69,17 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/poem-header.png" alt="Hope rising">
+      <img src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">poem-a-story</p>
+        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
       </div>
     </a>
 
     
     <a href="/poems/sorry.html" class="poem-card" data-category="nature">
       <span class="poem-category">Nature</span>
-      <img src="images/poem-header.png" alt="Moonlit night">
+      <img src="images/pic2.png" alt="Moonlit night">
       <div class="poem-card-content">
         <h2 class="poem-title">Sorry</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -83,19 +88,19 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/poem-header.png" alt="Hope rising">
+      <img src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
-        <p class="poem-description">poem-a-story</p>
+        <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
       </div>
     </a>
 
   </div> <!-- end of poems-grid -->
 </div> <!-- end of poems-wrapper -->
 
-  <footer>
+  <footer class="navbar">
     <div class="footer-content">
-      <a href="index.html" class="footer-logo">G</a>
+      <!-- <a href="index.html" class="footer-logo">G</a> -->
       <p>&copy; 2025 Gaurab. All rights reserved.</p>
     </div>
   </footer>
