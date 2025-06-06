@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Poems | Gaurab</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Add preload for critical images -->
+  <link rel="preload" href="images/poem-header.jpg" as="image">
 </head>
 
 <body>
   <header class="navbar">
-  <nav >
+  <nav>
     <a href="/" class="home-button">Home</a>
   </nav>
   </header>
 
   <div class="poems-header">
-
     <h1>Poetry Collection</h1>
     <div class="underline"></div>
     <p class="poems-description">
@@ -28,7 +30,7 @@
     </p>
 
     <div class="category-dropdown">
-      <select id="poem-category" onchange="filterPoems(this.value)">
+      <select id="poem-category" onload="filterPoems('all')">
         <option value="all">All Poems</option>
         <option value="nature">Nature</option>
         <option value="love">Love</option>
@@ -39,10 +41,9 @@
 
   <div class="poems-wrapper">
   <div class="poems-grid">
-
     <a href="/poems/sorry.html" class="poem-card" data-category="nature">
       <span class="poem-category">Nature</span>
-      <img src="images/asa.jpg" alt="Moonlit night">
+      <img loading="lazy" src="images/asa.jpg" alt="Moonlit night">
       <div class="poem-card-content">
         <h2 class="poem-title">Sorry</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -51,7 +52,7 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/pic2.png" alt="Hope rising">
+      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -60,7 +61,7 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="nature">
       <span class="poem-category">Nature</span>
-      <img src="images/pic2.png" alt="Moonlit night">
+      <img loading="lazy" src="images/pic2.png" alt="Moonlit night">
       <div class="poem-card-content">
         <h2 class="poem-title">Sorry</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -69,17 +70,16 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/pic2.png" alt="Hope rising">
+      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
       </div>
     </a>
 
-    
     <a href="/poems/sorry.html" class="poem-card" data-category="nature">
       <span class="poem-category">Nature</span>
-      <img src="images/pic2.png" alt="Moonlit night">
+      <img loading="lazy" src="images/pic2.png" alt="Moonlit night">
       <div class="poem-card-content">
         <h2 class="poem-title">Sorry</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
@@ -88,34 +88,43 @@
 
     <a href="/poems/sorry.html" class="poem-card" data-category="love">
       <span class="poem-category">Love</span>
-      <img src="images/pic2.png" alt="Hope rising">
+      <img loading="lazy" src="images/pic2.png" alt="Hope rising">
       <div class="poem-card-content">
         <h2 class="poem-title">poem-title</h2>
         <p class="poem-description">A brief glimpse through life's uncertain waters...</p>
       </div>
     </a>
-
-  </div> <!-- end of poems-grid -->
-</div> <!-- end of poems-wrapper -->
+  </div>
+</div>
 
   <footer class="navbar">
     <div class="footer-content">
-      <!-- <a href="index.html" class="footer-logo">G</a> -->
       <p>&copy; 2025 Gaurab. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    function filterPoems(category) {
-      const poems = document.querySelectorAll('.poem-card');
-      poems.forEach(poem => {
-        if (category === 'all' || poem.dataset.category === category) {
-          poem.style.display = 'block';
-        } else {
-          poem.style.display = 'none';
-        }
+    // Defer JavaScript execution
+    document.addEventListener('DOMContentLoaded', function() {
+      function filterPoems(category) {
+        const poems = document.querySelectorAll('.poem-card');
+        poems.forEach(poem => {
+          if (category === 'all' || poem.dataset.category === category) {
+            poem.style.display = 'block';
+          } else {
+            poem.style.display = 'none';
+          }
+        });
+      }
+
+      // Add event listener to select element
+      document.getElementById('poem-category').addEventListener('change', function() {
+        filterPoems(this.value);
       });
-    }
+
+      // Initial filter
+      filterPoems('all');
+    });
   </script>
 </body>
 </html>

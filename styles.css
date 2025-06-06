@@ -37,11 +37,13 @@ body {
     color: var(--text-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    background: var(--background-color);
 }
 
 .navbar {
-  background-image: url('images/poem-header.jpg');
-  background-position: top;
+    background-image: url('images/poem-header.jpg');
+    background-position: top;
+    background-size: cover;
     backdrop-filter: blur(10px);
     padding: 1.2rem 2rem;
     border-bottom: 1px solid transparent;
@@ -49,8 +51,8 @@ body {
     justify-content: space-between;
     align-items: center;
     object-position: bottom;
+    will-change: transform;
 }
-
 
 .home-button {
     color: var(--primary-color);
@@ -72,6 +74,7 @@ body {
     text-align: center;
     padding: 8rem 2rem 4rem;
     margin-bottom: 2rem;
+    will-change: transform;
 }
 
 h1 {
@@ -134,75 +137,13 @@ h1 {
 
 .poems-wrapper {
     background: linear-gradient(135deg, #1a2742 0%, #2d4a7c 30%, #1e3a5f 70%, #0f1c2e 100%);
-    background-position: bottom;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
-}
-
-/* Animated starry background */
-.poems-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
-        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
-        radial-gradient(2px 2px at 160px 30px, #fff, transparent),
-        radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.8), transparent),
-        radial-gradient(2px 2px at 240px 50px, #fff, transparent),
-        radial-gradient(1px 1px at 280px 20px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(1px 1px at 320px 100px, #fff, transparent),
-        radial-gradient(2px 2px at 360px 60px, rgba(255,255,255,0.9), transparent);
-    background-repeat: repeat;
-    background-size: 400px 200px;
-    animation: twinkle 8s infinite linear;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Twinkling animation */
-@keyframes twinkle {
-    0% { opacity: 0.3; }
-    25% { opacity: 1; }
-    50% { opacity: 0.5; }
-    75% { opacity: 0.8; }
-    100% { opacity: 0.3; }
-}
-
-/* Floating particles */
-.poems-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(1px 1px at 50px 120px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 150px 180px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(2px 2px at 250px 140px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 350px 200px, rgba(255,255,255,0.4), transparent);
-    background-repeat: repeat;
-    background-size: 500px 300px;
-    animation: float 12s infinite ease-in-out;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) translateX(0px); }
-    25% { transform: translateY(-10px) translateX(5px); }
-    50% { transform: translateY(-5px) translateX(-3px); }
-    75% { transform: translateY(-15px) translateX(8px); }
+    will-change: transform;
 }
 
 .poems-grid {
@@ -220,32 +161,29 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 
-        0 4px 15px rgba(89, 46, 131, 0.15),
-        0 1px 3px rgba(255, 255, 255, 0.1) inset;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(89, 46, 131, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: inherit;
     position: relative;
     animation: fadeIn 0.6s ease;
     display: block;
+    will-change: transform;
 }
 
 .poem-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-        0 12px 35px rgba(89, 46, 131, 0.25),
-        0 2px 10px rgba(255, 255, 255, 0.2) inset;
-    background: rgba(255, 255, 255, 0.98);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(89, 46, 131, 0.25);
 }
 
 .poem-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    object-position: top; 
+    object-position: top;
     border-radius: 10px;
     transition: transform 0.4s ease;
+    will-change: transform;
 }
 
 .poem-card:hover img {
@@ -264,7 +202,6 @@ h1 {
     font-size: 1.5rem;
     margin: 0 0 0.5rem 0;
     font-weight: bold;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
 }
 
 .poem-description {
@@ -314,25 +251,6 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Add subtle glow effect to cards */
-.poem-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, transparent, rgba(89, 46, 131, 0.1), transparent);
-    border-radius: 12px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.poem-card:hover::before {
-    opacity: 1;
 }
 
 .back-button {
@@ -416,45 +334,10 @@ footer {
     text-align: center;
 }
 
-.footer-logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--primary);
-    border-radius: var(--radius-full);
-}
-
-.footer-links {
-    display: flex;
-    gap: var(--space-4);
-}
-
-.footer-links a {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    transition: color var(--transition-fast), transform var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: var(--primary);
-    transform: translateY(-3px);
-}
-
 footer p {
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 0;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
 }
 
 @media (max-width: 768px) {
