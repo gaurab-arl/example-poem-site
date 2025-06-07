@@ -72,29 +72,15 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      function filterPoems(category) {
-        const poems = document.querySelectorAll('.poem-card');
-        poems.forEach(poem => {
-          if (category === 'all' || poem.dataset.category === category) {
-            poem.style.display = 'block';
-          } else {
-            poem.style.display = 'none';
-          }
-        });
-      }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6WCQTHSCM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D6WCQTHSCM');
+</script>
+  
+ <script src="/js/main.js"></script>
 
-      const categorySelect = document.getElementById('poem-category');
-      if (categorySelect) {
-        categorySelect.addEventListener('change', function() {
-          filterPoems(this.value);
-        });
-      }
-
-      // Initialize with all poems showing
-      filterPoems('all');
-    });
-  </script>
 </body>
 </html>
