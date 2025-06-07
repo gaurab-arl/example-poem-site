@@ -44,6 +44,8 @@
     transition: all var(--transition-speed);
     text-decoration: none;
     backdrop-filter: blur(10px);
+    display: inline-block;
+    margin-top: 2rem; /* Add space above the button */
 }
 
 .home-button:hover {
@@ -65,10 +67,11 @@ body {
 .unified-header {
     background-image: var(--shared-header-image);
     background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 1.2rem 2rem 6rem;
-    min-height: 50vh;
+    background-position-y: 30%;
+    position: top;
+    padding: 1.2rem 2rem 8rem;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     will-change: transform;
@@ -102,18 +105,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 4rem 0;
 }
  
 .poems-wrapper {
     background: var(--background-color) var(--background-poem-wrapper) no-repeat center/cover;
-    padding: 6rem 2rem 8rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 8rem 1rem 4rem;
+    max-width: 100vw;
+    margin: 0;
     position: relative;
-    min-height: 80vh;
+    min-height: 70vh;
     overflow: hidden;
     will-change: transform;
 }
@@ -123,17 +126,17 @@ h1 {
     text-align: center;
     color: white;
     margin-bottom: 2rem;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: fadeIn 1s ease;
 }
 
 .poems-description {
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -141,15 +144,17 @@ h1 {
 .category-dropdown {
     text-align: center;
     margin: 2rem auto 0;
-    max-width: 300px;
+    max-width: 800px;    /* Increase max-width further */
+    width: 100%;         /* Ensure it stretches to container width */
     position: relative;
     z-index: 10;
 }
 
 .category-dropdown select {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
+    width: 100%;         /* Make select fill the dropdown */
+    min-width: 250px;    /* Optional: set a minimum width */
+    padding: 1.2rem 3.2rem 1.2rem 1.8rem;
+    font-size: 1.1rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.9);
@@ -164,7 +169,7 @@ h1 {
 .category-dropdown::after {
     content: '▼';
     position: absolute;
-    right: 1.5rem;
+    right: 1.8rem;
     top: 50%;
     transform: translateY(-50%);
     color: var(--primary-color);
@@ -179,6 +184,7 @@ h1 {
 }
 
 .poem-content {
+     margin: 0;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -187,22 +193,23 @@ h1 {
 
 .poems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 3rem;
-    padding: 3rem 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2rem;
+    padding: 2rem 3rem;
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 120vw;
     margin: 0 auto;
+    width: 100%;
 }
 
 .poem-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(89, 46, 131, 0.15);
+    box-shadow: 0 12px 40px rgba(89, 46, 131, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: inherit;
@@ -210,17 +217,21 @@ h1 {
     animation: fadeIn 0.6s ease;
     display: block;
     will-change: transform;
-    min-height: 400px;
+    min-height: 350px;
+    max-width: 350px;
+    margin-left: 0;
+    margin-right: auto;
+     margin: 0;
 }
 
 .poem-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 60px rgba(89, 46, 131, 0.25);
+    transform: translate(-15px, -15px);
+    box-shadow: 0 25px 70px rgba(89, 46, 131, 0.25);
 }
 
 .poem-card img {
     width: 100%;
-    height: 240px;
+    height: 200px;
     object-fit: cover;
     object-position: top;
     margin-bottom: -4px;
@@ -240,7 +251,7 @@ h1 {
 .poem-title {
     font-family: var(--font-heading);
     color: #592e83;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 0 0 1rem 0;
     font-weight: bold;
     line-height: 1.3;
@@ -395,28 +406,31 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
+    h1 { font-size: 3rem; }
     .poems-grid { 
         grid-template-columns: 1fr; 
-        gap: 2rem;
-        padding: 2rem 1rem;
+        gap: 3rem;
+        padding: 3rem 2rem;
     }
     .poems-wrapper { 
-        padding: 4rem 1rem 6rem;
-        min-height: 70vh;
+        padding: 6rem 1rem 8rem;
+        min-height: 80vh;
     }
     .poem-page-image {
         height: 300px;
     }
     .unified-header {
-        padding: 1rem 1rem 4rem;
-        min-height: 45vh;
+        padding: 1rem 1rem 6rem;
+        min-height: 90vh;
     }
     .poem-card {
-        min-height: 350px;
+        min-height: 400px;
     }
     .poem-card img {
-        height: 200px;
+        height: 220px;
+    }
+    .header-content {
+        padding: 3rem 0;
     }
 }
 
@@ -427,15 +441,15 @@ footer p {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .poem-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .poem-description {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .poem-page-image {
@@ -443,21 +457,26 @@ footer p {
     }
     
     .unified-header {
-        padding: 0.8rem 0.8rem 3rem;
-        min-height: 40vh;
+        padding: 0.8rem 0.8rem 4rem;
+        min-height: 85vh;
     }
     
     .poems-wrapper {
-        padding: 3rem 0.5rem 4rem;
-        min-height: 60vh;
+        padding: 4rem 0.5rem 6rem;
+        min-height: 70vh;
     }
     
     .poems-grid {
-        gap: 1.5rem;
-        padding: 1.5rem 0.5rem;
+        gap: 2rem;
+        padding: 2rem 1rem;
+        grid-template-columns: 1fr;
     }
     
     .poem-card {
-        min-height: 320px;
+        min-height: 350px;
+    }
+    
+    .header-content {
+        padding: 2rem 0;
     }
 }
