@@ -27,6 +27,10 @@
     --transition-fast: 0.15s;
     --error: #f472b6;
     --font-heading: 'Playfair Display', serif;
+
+    --background-poem-header: url('../images/poem-header.jpg');
+    --background-poem-wrapper: url('../images/game-background.png');
+    --background-navbar:  url('../images/poem-header.jpg');
 }
 .home-button {
     color: var(--primary-color);
@@ -53,7 +57,7 @@ body {
 }
 
 .navbar {
-    background-image: url('images/poem-header.jpg');
+    background-image: var(--background-navbar);
     background-position: top;
     background-size: cover;
     backdrop-filter: blur(15px);
@@ -67,7 +71,7 @@ body {
 }
  
 .poems-wrapper {
-    background: var(--background-color) url('images/game-background.png') no-repeat center/cover;
+    background: var(--background-color) var(--background-poem-wrapper) no-repeat center/cover;
    padding: 3rem 2rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
@@ -78,7 +82,7 @@ body {
 }
 
 .poems-header {
-    background-image: url('images/poem-header.jpg');
+    background-image: var(--background-poem-header);
     background-size: cover;
     background-position-y: 25%;
     text-align: center;
