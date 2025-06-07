@@ -67,8 +67,8 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    padding: 1.2rem 2rem 8rem;
-    min-height: 60vh;
+    padding: 1.2rem 2rem 6rem;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     will-change: transform;
@@ -109,11 +109,11 @@ body {
  
 .poems-wrapper {
     background: var(--background-color) var(--background-poem-wrapper) no-repeat center/cover;
-    padding: 3rem 2rem 2rem;
-    max-width: 1200px;
+    padding: 6rem 2rem 8rem;
+    max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    min-height: unset;
+    min-height: 80vh;
     overflow: hidden;
     will-change: transform;
 }
@@ -187,20 +187,22 @@ h1 {
 
 .poems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 3rem 2rem;
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .poem-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(89, 46, 131, 0.15);
+    box-shadow: 0 8px 32px rgba(89, 46, 131, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: inherit;
@@ -208,16 +210,17 @@ h1 {
     animation: fadeIn 0.6s ease;
     display: block;
     will-change: transform;
+    min-height: 400px;
 }
 
 .poem-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(89, 46, 131, 0.25);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(89, 46, 131, 0.25);
 }
 
 .poem-card img {
     width: 100%;
-    height: 200px;
+    height: 240px;
     object-fit: cover;
     object-position: top;
     margin-bottom: -4px;
@@ -230,34 +233,35 @@ h1 {
 }
 
 .poem-card-content {
-    padding: 1.5rem;
+    padding: 2rem;
     background: transparent;
 }
 
 .poem-title {
     font-family: var(--font-heading);
     color: #592e83;
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem 0;
+    font-size: 1.6rem;
+    margin: 0 0 1rem 0;
     font-weight: bold;
+    line-height: 1.3;
 }
 
 .poem-description {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin: 0;
 }
 
 .poem-category {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.2rem;
+    right: 1.2rem;
     background: linear-gradient(135deg, rgba(89, 46, 131, 0.9), rgba(123, 67, 176, 0.9));
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 50px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(89, 46, 131, 0.3);
     backdrop-filter: blur(5px);
@@ -392,14 +396,27 @@ footer p {
 
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
-    .poems-grid { grid-template-columns: 1fr; }
-    .poems-wrapper { padding: 1rem; }
+    .poems-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .poems-wrapper { 
+        padding: 4rem 1rem 6rem;
+        min-height: 70vh;
+    }
     .poem-page-image {
         height: 300px;
     }
     .unified-header {
         padding: 1rem 1rem 4rem;
-        min-height: 50vh;
+        min-height: 45vh;
+    }
+    .poem-card {
+        min-height: 350px;
+    }
+    .poem-card img {
+        height: 200px;
     }
 }
 
@@ -414,7 +431,7 @@ footer p {
     }
 
     .poem-title {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .poem-description {
@@ -428,5 +445,19 @@ footer p {
     .unified-header {
         padding: 0.8rem 0.8rem 3rem;
         min-height: 40vh;
+    }
+    
+    .poems-wrapper {
+        padding: 3rem 0.5rem 4rem;
+        min-height: 60vh;
+    }
+    
+    .poems-grid {
+        gap: 1.5rem;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .poem-card {
+        min-height: 320px;
     }
 }
