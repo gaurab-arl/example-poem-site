@@ -204,6 +204,7 @@ h1 {
 }
 
 .poem-card {
+    
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -222,10 +223,11 @@ h1 {
     margin-left: 0;
     margin-right: auto;
      margin: 0;
+         transform: translate(-15px, -15px);
+
 }
 
 .poem-card:hover {
-    transform: translate(-15px, -15px);
     box-shadow: 0 25px 70px rgba(89, 46, 131, 0.25);
 }
 
