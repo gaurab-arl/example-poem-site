@@ -19,6 +19,7 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     line-height: 1.6;
+    background: var(--background-color);
 }
 
 .container {
@@ -74,12 +75,40 @@ body {
     line-height: 1.8;
     font-size: 1.1rem;
     color: white;
-      background-image: url('../images/header.png');
-
+    /* Fallback background color for immediate visibility */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Background image loads on top of gradient */
+    background-image: url('../images/header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid rgba(126, 91, 239, 0.1);
     margin: 2rem 0;
+    /* Add text shadow for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* Ensure text is always visible */
+    position: relative;
+}
+
+/* Add overlay for better text readability */
+.poem-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* Ensure text appears above overlay */
+.poem-content * {
+    position: relative;
+    z-index: 2;
 }
 
 .author {
@@ -88,6 +117,21 @@ body {
     font-style: italic;
     color: var(--primary-color);
     font-size: 1.1rem;
+}
+
+/* Loading state for better UX */
+.poem-content.loading {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 @media (max-width: 768px) {
@@ -103,6 +147,7 @@ body {
     .poem-content {
         font-size: 1rem;
         padding: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -118,7 +163,7 @@ body {
 
     .poem-content {
         padding: 1rem;
+        font-size: 0.95rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     }
 }
-
-
