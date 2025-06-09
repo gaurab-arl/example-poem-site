@@ -4,20 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Poems | Gaurab</title>
+  <meta name="description" content="Journey through emotions, experiences, and moments captured in verses by Gaurab Aryal">
+  <meta name="keywords" content="poetry, poems, literature, Gaurab Aryal, creative writing">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="images/poem-header.jpg" as="image">
+  <link rel="preload" href="css/styles.css" as="style">
+  
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   
-  <!-- Add preload for critical images -->
-  <link rel="preload" href="images/poem-header.jpg" as="image">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
   <div class="unified-header">
     <header class="navbar">
       <nav>
-        <a href="/" class="home-button">Home</a>
+        <a href="/" class="home-button">
+          <i class="fas fa-home"></i> Home
+        </a>
       </nav>
     </header>
 
@@ -26,11 +35,11 @@
       <div class="underline"></div>
       <p class="poems-description">
         Journey through emotions, experiences, and moments captured in verses. 
-        Each poem tells a unique story, emotion , that I have been through.
+        Each poem tells a unique story, emotion, that I have been through.
       </p>
 
       <div class="category-dropdown">
-        <select id="poem-category">
+        <select id="poem-category" aria-label="Filter poems by category">
           <option value="all">All Poems</option>
           <option value="nature">Nature</option>
           <option value="love">Love</option>
@@ -43,53 +52,54 @@
   <div class="poems-wrapper">
     <div class="poems-grid">
 
-       <a href="/poems/afriend.html" class="poem-card" data-category="nature">
-        <span class="poem-category">nature</span>
-        <img src="images/poem-header.jpg" alt="First Love" loading="lazy">
+       <a href="/poems/afriend.html" class="poem-card" data-category="nature" aria-label="Read A Friend for a Moment, a Stranger the Next">
+        <span class="poem-category">Nature</span>
+        <img src="images/poem-header.jpg" alt="A Friend for a Moment, a Stranger the Next" loading="lazy">
         <div class="poem-card-content">
-          <h2 class="poem-title"> A Friend for a Moment, a Stranger the Next </h2>
-          <p class="poem-description"> A moment that someone tell who you are in front of other. </p>
+          <h2 class="poem-title">A Friend for a Moment, a Stranger the Next</h2>
+          <p class="poem-description">A moment that someone tells who you are in front of others.</p>
         </div>
       </a> 
 
-      <a href="/poems/trapped.html" class="poem-card" data-category="nature">
-        <span class="poem-category">nature</span>
-        <img src="images/poem-header.jpg" alt="First Love" loading="lazy">
+      <a href="/poems/trapped.html" class="poem-card" data-category="life" aria-label="Read Trapped in the Web">
+        <span class="poem-category">Life</span>
+        <img src="images/poem-header.jpg" alt="Trapped in the Web" loading="lazy">
         <div class="poem-card-content">
-          <h2 class="poem-title"> Trapped in the web </h2>
-          <p class="poem-description"> A spider web , trapped in illusion where exiting mean jumping to another loop</p>
+          <h2 class="poem-title">Trapped in the Web</h2>
+          <p class="poem-description">A spider web, trapped in illusion where exiting means jumping to another loop.</p>
         </div>
       </a> 
 
-      <a href="/poems/whisper.html" class="poem-card" data-category="love">
+      <a href="/poems/whisper.html" class="poem-card" data-category="love" aria-label="Read A Whisper at the End">
         <span class="poem-category">Love</span>
-        <img src="images/poem-header.jpg" alt="First Love" loading="lazy">
+        <img src="images/poem-header.jpg" alt="A Whisper at the End" loading="lazy">
         <div class="poem-card-content">
-          <h2 class="poem-title"> A Whisper at the End </h2>
-          <p class="poem-description">A tender memory etched in time , a moment that lived in me</p>
+          <h2 class="poem-title">A Whisper at the End</h2>
+          <p class="poem-description">A tender memory etched in time, a moment that lived in me.</p>
         </div>
       </a>
       
 
-      <!-- this is last wapper and grid  -->
+      <!-- this is last wrapper and grid  -->
     </div>
   </div>
   
   <footer class="navbar">
     <div class="footer-content">
-      <p>&copy; 2025 Gaurab. All rights reserved.</p>
+      <p>&copy; 2025 Gaurab Aryal. All rights reserved. Made with ❤️ for poetry lovers.</p>
     </div>
   </footer>
 
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6WCQTHSCM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D6WCQTHSCM');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D6WCQTHSCM');
+  </script>
   
- <script src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 </html>
