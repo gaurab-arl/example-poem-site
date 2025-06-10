@@ -538,7 +538,6 @@ footer::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(126, 91, 239, 0.8), rgba(244, 114, 182, 0.7));
     z-index: 1;
 }
 
