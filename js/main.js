@@ -34,28 +34,39 @@ document.addEventListener('DOMContentLoaded', function () {
   // Enhanced poem filtering with animations
   function filterPoems(category) {
     const poems = document.querySelectorAll('.poem-card');
+    const grid = document.querySelector('.poems-grid');
+    
+    // Add filtering class for smooth transitions
+    grid.classList.add('filtering');
     
     // First, fade out all poems
     poems.forEach((poem, index) => {
-      poem.style.transition = 'all 0.3s ease';
-      poem.style.transform = 'scale(0.8)';
+      poem.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      poem.style.transform = 'scale(0.9) translateY(20px)';
       poem.style.opacity = '0';
     });
 
     // After fade out, show/hide poems and fade in visible ones
     setTimeout(() => {
+      let visibleIndex = 0;
       poems.forEach((poem, index) => {
         if (category === 'all' || poem.dataset.category === category) {
           poem.style.display = 'block';
           setTimeout(() => {
-            poem.style.transform = 'scale(1)';
+            poem.style.transform = 'scale(1) translateY(0)';
             poem.style.opacity = '1';
-          }, index * 100); // Staggered animation
+          }, visibleIndex * 80); // Staggered animation for visible poems only
+          visibleIndex++;
         } else {
           poem.style.display = 'none';
         }
       });
-    }, 300);
+      
+      // Remove filtering class after animations complete
+      setTimeout(() => {
+        grid.classList.remove('filtering');
+      }, 600);
+    }, 200);
   }
 
   const categorySelect = document.getElementById('poem-category');
@@ -68,76 +79,93 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize with all poems showing
   filterPoems('all');
 
-  // Add parallax effect to header
-  window.addEventListener('scroll', function() {
+  // Enhanced parallax effect with throttling
+  let ticking = false;
+  
+  function updateParallax() {
     const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
     const header = document.querySelector('.unified-header');
-    const footer = document.querySelector('footer');
+    const poemsWrapper = document.querySelector('.poems-wrapper');
     
     if (header) {
-      header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      header.style.transform = `translate3d(0, ${rate}px, 0)`;
     }
     
-    if (footer) {
-      const footerOffset = footer.offsetTop - window.innerHeight;
-      if (scrolled > footerOffset) {
-        footer.style.transform = `translateY(${(scrolled - footerOffset) * 0.3}px)`;
-      }
+    // Add subtle parallax to poems wrapper
+    if (poemsWrapper) {
+      const poemsRate = scrolled * -0.1;
+      poemsWrapper.style.transform = `translate3d(0, ${poemsRate}px, 0)`;
+    }
+    
+    ticking = false;
+  }
+  
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
     }
   });
 
-  // Add hover sound effect (optional)
+  // Enhanced hover effects for poem cards
   const poemCards = document.querySelectorAll('.poem-card');
   poemCards.forEach(card => {
     card.addEventListener('mouseenter', function(e) {
-      // Add subtle scale animation
-      this.style.transform = 'translateY(-12px) scale(1.02)';
+      this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      this.style.transform = 'translateY(-15px) scale(1.03)';
     });
     
     card.addEventListener('mouseleave', function(e) {
+      this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       this.style.transform = 'translateY(0) scale(1)';
     });
     
-    // Ensure clicks work properly
+    // Add click feedback
     card.addEventListener('click', function(e) {
-      // Don't prevent default - let the link work naturally
+      this.style.transform = 'translateY(-8px) scale(1.01)';
+      setTimeout(() => {
+        this.style.transform = 'translateY(-15px) scale(1.03)';
+      }, 100);
       console.log('Poem card clicked:', this.href);
     });
   });
 
-  // Add typing effect to main title
+  // Enhanced typing effect for main title
   const title = document.querySelector('h1');
   if (title && title.textContent === 'Poetry Collection') {
     const text = title.textContent;
     title.textContent = '';
-    title.style.borderRight = '2px solid white';
+    title.style.borderRight = '3px solid rgba(255, 255, 255, 0.8)';
+    title.style.animation = 'blink 1s infinite';
     
     let i = 0;
     const typeWriter = () => {
       if (i < text.length) {
         title.textContent += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 80);
       } else {
         setTimeout(() => {
           title.style.borderRight = 'none';
+          title.style.animation = 'none';
         }, 1000);
       }
     };
     
-    setTimeout(typeWriter, 1000);
+    setTimeout(typeWriter, 800);
   }
 
-  // Add intersection observer for scroll animations
+  // Enhanced intersection observer for scroll animations
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+        entry.target.classList.add('page-transition');
       }
     });
   }, observerOptions);
@@ -145,5 +173,27 @@ document.addEventListener('DOMContentLoaded', function () {
   // Observe poem cards for scroll animations
   document.querySelectorAll('.poem-card').forEach(card => {
     observer.observe(card);
+  });
+  
+  // Add CSS for blinking cursor
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes blink {
+      0%, 50% { border-color: rgba(255, 255, 255, 0.8); }
+      51%, 100% { border-color: transparent; }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Preload images for smoother experience
+  const imageUrls = [
+    'images/poem-header.jpg',
+    'images/game-background.png',
+    'images/header.png'
+  ];
+  
+  imageUrls.forEach(url => {
+    const img = new Image();
+    img.src = url;
   });
 });
