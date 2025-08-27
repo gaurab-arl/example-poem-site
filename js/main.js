@@ -89,13 +89,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add hover sound effect (optional)
   const poemCards = document.querySelectorAll('.poem-card');
   poemCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function(e) {
       // Add subtle scale animation
       this.style.transform = 'translateY(-12px) scale(1.02)';
     });
     
-    card.addEventListener('mouseleave', function() {
+    card.addEventListener('mouseleave', function(e) {
       this.style.transform = 'translateY(0) scale(1)';
+    });
+    
+    // Ensure clicks work properly
+    card.addEventListener('click', function(e) {
+      // Don't prevent default - let the link work naturally
+      console.log('Poem card clicked:', this.href);
     });
   });
 
