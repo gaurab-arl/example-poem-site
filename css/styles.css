@@ -28,8 +28,8 @@
     --error: #e53e3e;
     --font-heading: 'Playfair Display', serif;
 
-    --shared-header-image: url('../images/front_page.png');
-    --background-poem-wrapper: url('../images/poem_wrapper.jpeg');
+    --shared-header-image: url('images/front_page.png');
+    --background-poem-wrapper: url('images/poem_wrapper.jpeg');
 }
 
 /* Smooth scrolling for the entire page */

@@ -159,10 +159,6 @@ body {
     line-height: 2;
     font-size: 1.2rem;
     color: white;
-    background: linear-gradient(135deg, 
-        rgba(74, 85, 104, 0.9) 0%, 
-        rgba(113, 128, 150, 0.8) 50%, 
-        rgba(45, 55, 72, 0.9) 100%);
    background-image: var(--background-poem);
     background-size: cover;
     background-position: center;
