@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #7e5bef;
-    --secondary-color: #f472b6;
-    --accent-color: #ffe4f2;
-    --text-color: #2f1e4c;
-    --background-color: #fdf9ff;
+    --primary-color: #4a5568;
+    --secondary-color: #718096;
+    --accent-color: #e2e8f0;
+    --text-color: #2d3748;
+    --background-color: #f7fafc;
     --card-background: #fff;
-    --shadow-color: rgba(126, 91, 239, 0.2);
+    --shadow-color: rgba(74, 85, 104, 0.15);
     --transition-speed: 0.4s;
     --border-radius: 20px;
     --font-family: 'Georgia', serif;
@@ -24,7 +24,7 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     line-height: 1.6;
-    background: linear-gradient(135deg, #fdf9ff 0%, #f3f0ff 100%);
+    background: linear-gradient(135deg, var(--background-color) 0%, #edf2f7 100%);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -38,7 +38,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(126, 91, 239, 0.15);
+    box-shadow: 0 15px 40px rgba(74, 85, 104, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.3);
     animation: fadeInUp 1s ease;
 }
@@ -82,7 +82,7 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 8px 25px rgba(126, 91, 239, 0.3);
+    box-shadow: 0 6px 20px rgba(74, 85, 104, 0.25);
     position: relative;
     overflow: hidden;
     transform-origin: center;
@@ -106,7 +106,7 @@ body {
 
 .back-button:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(126, 91, 239, 0.4);
+    box-shadow: 0 12px 30px rgba(74, 85, 104, 0.3);
 }
 
 .back-button:active {
@@ -145,7 +145,7 @@ body {
 
 .poem-page-description {
     font-style: italic;
-    color: #666;
+    color: var(--secondary-color);
     font-size: 1.3rem;
     margin: 1rem 0 2rem;
     line-height: 1.6;
@@ -157,13 +157,11 @@ body {
     line-height: 2;
     font-size: 1.2rem;
     color: white;
-    /* Enhanced fallback background */
     background: linear-gradient(135deg, 
-        rgba(126, 91, 239, 0.9) 0%, 
-        rgba(244, 114, 182, 0.8) 50%, 
-        rgba(139, 69, 19, 0.7) 100%);
-    /* Background image loads on top of gradient */
-    background-image: url('../images/header.png');
+        rgba(74, 85, 104, 0.9) 0%, 
+        rgba(113, 128, 150, 0.8) 50%, 
+        rgba(45, 55, 72, 0.9) 100%);
+    background-image: url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -171,10 +169,9 @@ body {
     padding: 3rem;
     border-radius: 20px;
     margin: 3rem 0;
-    /* Enhanced text shadow for better readability */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     position: relative;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     animation: fadeInScale 1.5s ease;
 }
 
@@ -213,9 +210,9 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, 
-        rgba(0, 0, 0, 0.4) 0%, 
-        rgba(0, 0, 0, 0.2) 50%, 
-        rgba(0, 0, 0, 0.3) 100%);
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.1) 50%, 
+        rgba(0, 0, 0, 0.2) 100%);
     border-radius: 20px;
     z-index: 1;
 }
@@ -242,9 +239,9 @@ body {
 /* Enhanced loading state */
 .poem-content.loading {
     background: linear-gradient(135deg, 
-        rgba(126, 91, 239, 0.9) 0%, 
-        rgba(244, 114, 182, 0.8) 50%, 
-        rgba(139, 69, 19, 0.7) 100%);
+        rgba(74, 85, 104, 0.9) 0%, 
+        rgba(113, 128, 150, 0.8) 50%, 
+        rgba(45, 55, 72, 0.9) 100%);
     animation: pulse 2s infinite, shimmer 3s infinite;
 }
 
@@ -290,7 +287,7 @@ body {
     .poem-content {
         font-size: 1.1rem;
         padding: 2rem;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         line-height: 1.9;
     }
     
@@ -317,7 +314,7 @@ body {
     .poem-content {
         padding: 1.5rem;
         font-size: 1rem;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.95);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.95);
         line-height: 1.8;
     }
     

@@ -187,9 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
   // Preload images for smoother experience
   const imageUrls = [
-    'images/poem-header.jpg',
-    'images/game-background.png',
-    'images/header.png'
+    'https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   ];
   
   imageUrls.forEach(url => {

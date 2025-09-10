@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // Start loading the image
-        img.src = '../images/header.png';
+        img.src = 'https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
     } else {
         // If no poem content, still add loaded class for consistency
         setTimeout(() => {
