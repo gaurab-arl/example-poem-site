@@ -10,6 +10,8 @@
     --border-radius: 20px;
     --font-family: 'Georgia', serif;
     --font-heading: 'Playfair Display', serif;
+
+    --background-poem : url('/images/header.png');
 }
 
 html {
@@ -161,7 +163,7 @@ body {
         rgba(74, 85, 104, 0.9) 0%, 
         rgba(113, 128, 150, 0.8) 50%, 
         rgba(45, 55, 72, 0.9) 100%);
-    background-image: url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+   background-image: var(--background-poem);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
