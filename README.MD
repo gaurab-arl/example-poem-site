@@ -18,9 +18,8 @@ Project Link: [https://gaurab-arl.github.io/example-poem-site/](https://gaurab-a
 ![Poem Page](README_IMAGES/individual.png)
 *Beautiful poem display with background imagery*
 
-### Interactive Features
-![Category Filter](README_IMAGES/category.png)
-*Smooth category filtering with animations*
+### Loading Screen
+![Loading Screen](README_IMAGES/loading.png)
 
 ---
 
